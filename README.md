@@ -1,0 +1,1 @@
+基于mabiys,springboot,aliyunoss与mysql构建的简易个人博客练手项目,配置好自己的aliyuoss与mysql后即可使用
