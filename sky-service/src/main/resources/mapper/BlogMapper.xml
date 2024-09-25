@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sky.mapper.BlogMapper">
+    <select id="pageQuery" resultType="com.sky.po.Blog">
+        select * from sky_own_blog.blogs
+        <where>
+            <if test="blogName != null and blogName != ''">
+                and blog_Name like concat('%',#{blogName},'%')
+            </if>
+        </where>
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into sky_own_blog.blogs (of_Types, blog_Name, text, release_Time, image)
+        values (#{ofTypes},#{blogName},#{text},#{releaseTime},#{image})
+    </insert>
+    <update id="update" parameterType="com.sky.po.Blog">
+        update sky_own_blog.blogs
+        <set>
+            <if test="ofTypes != null">of_Types = #{ofTypes},</if>
+            <if test="blogName != null">blog_Name = #{blogName},</if>
+            <if test="text != null">text = #{text},</if>
+            <if test="releaseTime != null">release_Time = #{releaseTime},</if>
+            <if test="image != null">image = #{image}</if>
+      </set>
+        where id = #{id}
+    </update>
+</mapper>

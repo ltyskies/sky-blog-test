@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sky.mapper.BlogTypesMapper">
+    <select id="pageQuery" resultType="com.sky.po.BlogTypes">
+        select * from sky_own_blog.blog_types
+        <where>
+            <if test="typeName != null and typeName != ''">
+                and type_Name like concat('%',#{typeName},'%')
+            </if>
+        </where>
+    </select>
+    <update id="update" parameterType="com.sky.po.BlogTypes">
+        update sky_own_blog.blog_types
+        <set>
+            <if test="typeName != null">type_Name = #{typeName},</if>
+            <if test="number != null">number = #{number},</if>
+            <if test="description != null">description = #{description},</if>
+      </set>
+        where id = #{id}
+    </update>
+</mapper>

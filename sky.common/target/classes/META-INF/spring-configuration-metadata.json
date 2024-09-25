@@ -1,0 +1,52 @@
+{
+  "groups": [
+    {
+      "name": "sky.alioss",
+      "type": "com.sky.properties.AliOssProperties",
+      "sourceType": "com.sky.properties.AliOssProperties"
+    },
+    {
+      "name": "sky.jwt",
+      "type": "com.sky.properties.JwtProperties",
+      "sourceType": "com.sky.properties.JwtProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "sky.alioss.access-key-id",
+      "type": "java.lang.String",
+      "sourceType": "com.sky.properties.AliOssProperties"
+    },
+    {
+      "name": "sky.alioss.access-key-secret",
+      "type": "java.lang.String",
+      "sourceType": "com.sky.properties.AliOssProperties"
+    },
+    {
+      "name": "sky.alioss.bucket-name",
+      "type": "java.lang.String",
+      "sourceType": "com.sky.properties.AliOssProperties"
+    },
+    {
+      "name": "sky.alioss.endpoint",
+      "type": "java.lang.String",
+      "sourceType": "com.sky.properties.AliOssProperties"
+    },
+    {
+      "name": "sky.jwt.user-secret-key",
+      "type": "java.lang.String",
+      "sourceType": "com.sky.properties.JwtProperties"
+    },
+    {
+      "name": "sky.jwt.user-token-name",
+      "type": "java.lang.String",
+      "sourceType": "com.sky.properties.JwtProperties"
+    },
+    {
+      "name": "sky.jwt.user-ttl",
+      "type": "java.lang.Long",
+      "sourceType": "com.sky.properties.JwtProperties"
+    }
+  ],
+  "hints": []
+}
